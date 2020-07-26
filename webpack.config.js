@@ -1,30 +1,18 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     entry: './src/js/index.js',
     output: {
-        filename: '[name].[contenthash].js',
-        path: path.resolve(__dirname, 'dist')
-    },
-    optimization: {
-        runtimeChunk: 'single',
-        splitChunks: {
-            cacheGroups: {
-                vendor: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name: 'vendors',
-                    chunks: 'all'
-                }
-            }
-        }
+        filename: 'js/main.js',
+        path: path.resolve(__dirname, 'docs')
     },
     plugins: [
-        new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
+        // new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
         new HtmlWebpackPlugin({filename: 'index.html', template: 'src/index.html'})],
     devServer: {
-        contentBase: './dist'
+        contentBase: './docs'
     },
     module: {
         rules: [
