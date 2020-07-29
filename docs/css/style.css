@@ -15,6 +15,7 @@ html {
       font-size: 50%; } }
 
 body {
+  display: block;
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 400;
   line-height: 1.6;
@@ -22,7 +23,9 @@ body {
   background-image: linear-gradient(to right bottom, #de6262, #ffb88c);
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: calc(100vh - 2 * 4vw); }
+  min-height: calc(100vh - 2 * 4vw);
+  overflow-y: auto;
+}
 
 .container {
   max-width: 120rem;
